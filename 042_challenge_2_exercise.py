@@ -1,5 +1,5 @@
 # Video alternative: https://vimeo.com/954334009/67af9910fc#t=1054
-
+import time
 # So far you've spent a lot of time writing new programs.
 
 # This is great for learning the fundamentals of code, but
@@ -28,11 +28,7 @@
 # optional. Don't forget about your assessment!
 
 def play_game():
-  board = [
-    [".", ".", "."],
-    [".", ".", "."],
-    [".", ".", "."]
-  ]
+  board = [["." for _ in range(3)] for _ in range(3)]
   player = "X"
   while not is_game_over(board):
     print(print_board(board))
@@ -57,7 +53,11 @@ def print_board(board):
   return grid
 
 def make_move(board, row, column, player):
-  board[row][column] = player
+  if board[row][column] == ".":
+    board[row][column] = player
+  else:
+    print(f"The player has already placed in this spot, Try Again.")
+    time.sleep(3)
   return board
 
 

@@ -40,7 +40,7 @@ print("Function: a_is_less_than_b")
 def a_is_less_than_b(a, b):
   # Uncomment this next line and replace ?? with the right operator
   # return a ?? b
-  pass
+  return a < b
 
 check_that_these_are_equal(
   a_is_less_than_b(1, 2),
